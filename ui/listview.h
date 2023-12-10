@@ -4,6 +4,7 @@
 #include <QtGui>
 #include <QtCore>
 #include <QListview>
+#include <QStandardItemModel>
 
 class MyListView : public QListView {
     Q_OBJECT

@@ -21,38 +21,6 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-//class MyTreeView : public QTreeView {
-//    Q_OBJECT
-
-//public:
-//    QFileSystemModel *dirmodel;
-//    MyTreeView(QString path);
-
-//private:
-//    QString sPath;
-//    int nameWidth = 240;
-//};
-
-
-//class MyListView : public QListView {
-//    Q_OBJECT
-
-//public:
-//    QFileSystemModel *filemodel;
-//    MyListView(QString path);
-
-//private:
-//    QString sPath;
-//};
-
-//class MyBox : public QMessageBox {
-//    Q_OBJECT
-
-//public:
-//    MyBox(QString message);
-//};
-
-
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
