@@ -2,7 +2,7 @@
 
 MyTreeView::MyTreeView(QString path) {
     dirmodel = new QFileSystemModel(this);
-    dirmodel->setFilter(QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files);
+    dirmodel->setFilter(QDir::NoDotAndDotDot | QDir::AllDirs);
     dirmodel->setRootPath(path);
 
     setModel(dirmodel);
