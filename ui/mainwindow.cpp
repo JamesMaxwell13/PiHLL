@@ -102,29 +102,3 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
     QString sPath = listview->filemodel->fileInfo(index).absoluteFilePath();
     QDesktopServices::openUrl(QUrl::fromLocalFile(sPath));
 }
-
-
-
-//MyTreeView::MyTreeView(QString path) {
-//    dirmodel = new QFileSystemModel(this);
-//    dirmodel->setFilter(QDir::NoDotAndDotDot | QDir::AllDirs);
-//    dirmodel->setRootPath(path);
-
-//    setModel(dirmodel);
-//    setColumnWidth(0, nameWidth);
-//}
-
-//MyListView::MyListView(QString path) {
-//    filemodel = new QFileSystemModel(this);
-//    filemodel->setFilter(QDir::NoDotAndDotDot | QDir::Files);
-//    filemodel->setRootPath(path);
-
-//    setModel(filemodel);
-//}
-
-//MyBox::MyBox(QString message) {
-//    setIcon(QMessageBox::Information);
-//    setText(message);
-//    setStyleSheet("QLabel { text-align: center; }");
-//    addButton(QMessageBox::Ok);
-//}
