@@ -5,7 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setWindowIcon(QIcon("D:/BSUIR/course work/3rd sem PiHLL/app/archiver_app/icons/icon.ico"));
+    setWindowIcon(QIcon("D:/BSUIR/course work/3rd sem PiHLL/src/archiver/icons/icon.ico"));
     setWindowTitle("Huffman archiver");
 
     widget = new QWidget;
@@ -105,26 +105,26 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
 
 
 
-MyTreeView::MyTreeView(QString path) {
-    dirmodel = new QFileSystemModel(this);
-    dirmodel->setFilter(QDir::NoDotAndDotDot | QDir::AllDirs);
-    dirmodel->setRootPath(path);
+//MyTreeView::MyTreeView(QString path) {
+//    dirmodel = new QFileSystemModel(this);
+//    dirmodel->setFilter(QDir::NoDotAndDotDot | QDir::AllDirs);
+//    dirmodel->setRootPath(path);
 
-    setModel(dirmodel);
-    setColumnWidth(0, nameWidth);
-}
+//    setModel(dirmodel);
+//    setColumnWidth(0, nameWidth);
+//}
 
-MyListView::MyListView(QString path) {
-    filemodel = new QFileSystemModel(this);
-    filemodel->setFilter(QDir::NoDotAndDotDot | QDir::Files);
-    filemodel->setRootPath(path);
+//MyListView::MyListView(QString path) {
+//    filemodel = new QFileSystemModel(this);
+//    filemodel->setFilter(QDir::NoDotAndDotDot | QDir::Files);
+//    filemodel->setRootPath(path);
 
-    setModel(filemodel);
-}
+//    setModel(filemodel);
+//}
 
-MyBox::MyBox(QString message) {
-    setIcon(QMessageBox::Information);
-    setText(message);
-    setStyleSheet("QLabel { text-align: center; }");
-    addButton(QMessageBox::Ok);
-}
+//MyBox::MyBox(QString message) {
+//    setIcon(QMessageBox::Information);
+//    setText(message);
+//    setStyleSheet("QLabel { text-align: center; }");
+//    addButton(QMessageBox::Ok);
+//}

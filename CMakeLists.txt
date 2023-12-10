@@ -14,9 +14,15 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
             main.cpp
-            mainwindow.cpp
-            mainwindow.h
-            mainwindow.ui
+            ui/mainwindow.cpp
+            ui/mainwindow.h
+            ui/mainwindow.ui
+            ui/box.h
+            ui/box.cpp
+            ui/listview.h
+            ui/listview.cpp
+            ui/treeview.h
+            ui/treeview.cpp
             algorythm/huffman.cpp
             algorythm/huffman.h
             algorythm/structs.cpp

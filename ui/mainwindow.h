@@ -4,9 +4,7 @@
 #include <QMainWindow>
 #include <QtGui>
 #include <QtCore>
-#include "QMessageBox"
-#include "QTreeView"
-#include "QListview"
+#include <QTreeView>
 #include <QBoxLayout>
 #include <QPushButton>
 #include <QAbstractButton>
@@ -14,42 +12,45 @@
 #include <QDesktopServices>
 #include <QTimer>
 #include <QIcon>
-#include "algorythm/huffman.h"
+#include "box.h"
+#include "listview.h"
+#include "treeview.h"
+#include "../algorythm/huffman.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MyTreeView : public QTreeView {
-    Q_OBJECT
+//class MyTreeView : public QTreeView {
+//    Q_OBJECT
 
-public:
-    QFileSystemModel *dirmodel;
-    MyTreeView(QString path);
+//public:
+//    QFileSystemModel *dirmodel;
+//    MyTreeView(QString path);
 
-private:
-    QString sPath;
-    int nameWidth = 240;
-};
+//private:
+//    QString sPath;
+//    int nameWidth = 240;
+//};
 
 
-class MyListView : public QListView {
-    Q_OBJECT
+//class MyListView : public QListView {
+//    Q_OBJECT
 
-public:
-    QFileSystemModel *filemodel;
-    MyListView(QString path);
+//public:
+//    QFileSystemModel *filemodel;
+//    MyListView(QString path);
 
-private:
-    QString sPath;
-};
+//private:
+//    QString sPath;
+//};
 
-class MyBox : public QMessageBox {
-    Q_OBJECT
+//class MyBox : public QMessageBox {
+//    Q_OBJECT
 
-public:
-    MyBox(QString message);
-};
+//public:
+//    MyBox(QString message);
+//};
 
 
 class MainWindow : public QMainWindow {
