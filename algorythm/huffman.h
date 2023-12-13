@@ -13,7 +13,7 @@ private:
     std::string filename;
     std::string message = "";
 
-    int readFile(std::vector<int>& frequency);
+    int read_file(std::vector<int>& frequency);
 
     void make_code(Node::ptr& node, std::string str, std::vector<std::string>& codes);
 

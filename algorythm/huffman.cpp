@@ -1,7 +1,7 @@
 #include "huffman.h"
 
 
-int Huffman_code::readFile( std::vector<int>& frequency) {
+int Huffman_code::read_file( std::vector<int>& frequency) {
     std::ifstream ifs(filename, std::ifstream::binary);
     if(!ifs.is_open()) {
         //std::cout << "error file access" << std::endl;
@@ -192,7 +192,7 @@ std::string Huffman_code::compress_file() {
         return std::string("Can't compress this file");
 
     std::vector<int> frequency(0x100, 0);
-    if(readFile(frequency) == 1)
+    if(read_file(frequency) == 1)
         return std::string("Error file reading");
 
     Queue_t queue(frequency);
