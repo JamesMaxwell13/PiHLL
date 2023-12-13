@@ -28,7 +28,7 @@ void Huffman_code::make_code(Node::ptr& node, std::string str, std::vector<std::
     }
 }
 
-int Huffman_code::message_to_code(const std::vector<std::string>& codes, std::string& message) {
+int Huffman_code::message_to_code(const std::vector<std::string>& codes) {
     std::ifstream ifs(filename, std::ifstream::binary);
     if(!ifs.is_open()) {
         //std::cout << "error file access" << std::endl;
@@ -41,7 +41,7 @@ int Huffman_code::message_to_code(const std::vector<std::string>& codes, std::st
     return 0;
 }
 
-int Huffman_code::write_file(std::vector<int>& frequency, const std::string message) {
+int Huffman_code::write_file(std::vector<int>& frequency) {
     std::string new_filename = filename + ".arch";
     std::ofstream ofs(new_filename, std::ofstream::binary);
     if(!ofs.is_open()) {
@@ -80,7 +80,7 @@ int Huffman_code::write_file(std::vector<int>& frequency, const std::string mess
     return 0;
 }
 
-int Huffman_code::read_decoding_file(std::vector<int>& frequency, std::string& message) {
+int Huffman_code::read_decoding_file(std::vector<int>& frequency) {
     // std::string new_filename = filename + ".arch";
     std::ifstream ifs(filename, std::ifstream::binary);
     if(!ifs.is_open()) {
@@ -123,7 +123,7 @@ int Huffman_code::read_decoding_file(std::vector<int>& frequency, std::string& m
     return 0;
 }
 
-void Huffman_code::make_char(const Node::ptr& root, const std::string& message, std::string&text) {
+void Huffman_code::make_char(const Node::ptr& root, std::string&text) {
     Node::ptr node = root;
     for(size_t i = 0; i < message.size(); i++) {
         char ch = message[i];
@@ -201,9 +201,9 @@ std::string Huffman_code::compress_file() {
     Node::ptr root = queue.top();
     make_code(root, "", codes);
 
-    if(message_to_code(codes, message) == 1)
+    if(message_to_code(codes) == 1)
         return std::string("Error making code");
-    if(write_file(frequency, message) == 1)
+    if(write_file(frequency) == 1)
         return std::string("Error writing data to file");
     return std::string("Compressing was successfull");
 }
@@ -214,7 +214,7 @@ std::string Huffman_code::decompress_file() {
 
     std::vector<int> frequency(0x100, 0);
 
-    if(read_decoding_file(frequency, message) == 1)
+    if(read_decoding_file(frequency) == 1)
         return std::string("Error file reading");
 
     Queue_t queue2(frequency);
@@ -222,7 +222,7 @@ std::string Huffman_code::decompress_file() {
     Node::ptr root2 = queue2.top();
 
     std::string text = "";
-    make_char(root2, message, text);
+    make_char(root2, text);
     if(write_decoding_file(text) == 1)
         return std::string("Error writing data to file");
     return std::string("Decompressing was succesfull");
