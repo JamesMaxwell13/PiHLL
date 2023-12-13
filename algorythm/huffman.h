@@ -23,7 +23,7 @@ private:
 
     int read_decoding_file(std::vector<int>& frequency);
 
-    void make_char(const Node::ptr& root, std::string&text);
+    void make_char(const Node::ptr& root, std::string& text);
 
     int write_decoding_file(std::string& text);
 

@@ -219,10 +219,10 @@ std::string Huffman_code::decompress_file() {
 
     Queue_t queue2(frequency);
     queue2.build_tree();
-    Node::ptr root2 = queue2.top();
+    Node::ptr root = queue2.top();
 
     std::string text = "";
-    make_char(root2, text);
+    make_char(root, text);
     if(write_decoding_file(text) == 1)
         return std::string("Error writing data to file");
     return std::string("Decompressing was succesfull");
